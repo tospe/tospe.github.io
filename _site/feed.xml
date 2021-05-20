@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-05-20T17:13:39+01:00</updated><id>/feed.xml</id><title type="html">Tomas Sousa-Pereira</title><subtitle>Trying to learn new things.
+</subtitle><author><name>pudim</name><email>tospe.ami@gmail.com</email></author><entry><title type="html">PS: An Image is Worth 16x16 words: transformers for image recognition at scale</title><link href="/study/vision/2021/04/12/vits.html" rel="alternate" type="text/html" title="PS: An Image is Worth 16x16 words: transformers for image recognition at scale" /><published>2021-04-12T00:00:00+01:00</published><updated>2021-04-12T00:00:00+01:00</updated><id>/study/vision/2021/04/12/vits</id><content type="html" xml:base="/study/vision/2021/04/12/vits.html">&lt;p&gt;Paper link: &lt;a href=&quot;https://arxiv.org/pdf/2010.11929.pdf&quot;&gt;AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE&lt;/a&gt;
+&lt;!-- What topic of paper / hypothesis / objectives --&gt;
+&lt;!-- ### What --&gt;&lt;/p&gt;
+
+&lt;!-- Why is this topic important (related) --&gt;
+&lt;!-- ### Why --&gt;
+
+&lt;!-- Metodology --&gt;
+&lt;!-- ### How --&gt;
+
+&lt;!-- results --&gt;
+&lt;!-- ### Results --&gt;
+
+&lt;!-- thoughts? conclusion --&gt;
+&lt;!-- ### Conclusion --&gt;
+
+&lt;h3 id=&quot;what&quot;&gt;What&lt;/h3&gt;
+&lt;p&gt;Transforms have become the choice in natural language processing. In computer vision CNN still are the dominant, classic resnet like architetures still are the state of the art. Idea: is to apply a standard transformer directly to images. The image is splited in patches and provide the sequence of linear embeddings of these patches as input to a Transformer. ViT does not generalize well when trained on insufficient amounts of data.&lt;/p&gt;
+
+&lt;h3 id=&quot;why&quot;&gt;Why&lt;/h3&gt;
+&lt;p&gt;Transformers were proposed for machine learning translation, and have since becomestate of the art method in manu NLP tasks. Large transformer models are often pre-trained on large corpora and then fine tuned for the task at hand. Naive application of sel-attention to images would requre that each pixelattends to every other pixel, does not scale to realistic inputs. Many aproximations were tried, many demonstrate promising results, but complex engineering to be implemented efficiently. There is interest in combining CNN with forms with self-attention. Only one model (trained in a unserpervised fashion) that uses Transformers with global self-attention to full images, wich applies Transformers to images pixels after reducing image resolution and color space.&lt;/p&gt;
+
+&lt;h3 id=&quot;how&quot;&gt;How&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/vit.png&quot; alt=&quot;ViT architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2D image is flattened. Similar to BERT [class] token x_class is a learnable embedding. The classification head is implemented by a MLP with one hidden layer at pre-training timeand by a single linear layer at fine-tuning. 1D learnable embeddings, since no performance gains from using 2D-aware position embeddings.&lt;/p&gt;
+
+&lt;p&gt;The transformer encoder consists of alternating layers of multiheaded self-attention. ViT was pre-trained on large datasets and fine-tune to smallerdownstream tasks. Remove the pre-trained prediction head and attach a zero-initialized feedorward layer. Is often beneficial to fine-tune at higher resolution than pre-training. When feeding higher resolution images, since the patch size is the same this means larger effective sequences.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Models&lt;/strong&gt;: ResNet, ViT and Hybrid (CNN). Pre training on different datasets of varying size and evaluate manu benchmark tasks. ViT attains state of the art on most recognition benchmarks at lower pre training cost. Self supervision in ViT holds promise for the future.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Datasets&lt;/strong&gt;: ImageNEt 1k classes and 1.3M images, ImageNet-21k 21k classesand 14M images, JFT 18K classes and 303M high-resolution images. Transfer models to ImageNEt Validation labels and the cleaned-up ReaL labels.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Model Variants&lt;/strong&gt;: ViT based on BERT. “Base” and “Large” directly adopted from BERT, added new “Huge” model. Transformers sequence length is inversely proportional to the square of the patch size thus models with smaller patch size are computationally more expensive. Baseline CNN, was used ResNet with Group Normalization and Used standardized convolutions.&lt;/p&gt;
+
+&lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
+&lt;p&gt;ViT-L/16 pre-trained on JFT-300M outperforms BiT-L on all tasks while requiring lesscomputational resources to train. ViT-H/14 further improves the performance. ViT-/16 model pre-trained on the public ImageNet-21k dataset performs well on most datasets too, while taking fewer resources to pre-train (TPUv3 for 30 days.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;First work with no Self-attention in computer vision. Instead the image is interpreted as a sequence of patches and process it by a standard transformer. Is Scalable and works really well when coupled with pre-training on large datasets. Matching and exceeding the state of the art on many images classification datasets, whilst being relatively cheap to pre-train.&lt;/p&gt;
+
+&lt;p&gt;Self-supervised pre-training methods need to be explored.&lt;/p&gt;</content><author><name>pudim</name><email>tospe.ami@gmail.com</email></author><category term="study" /><category term="vision" /><summary type="html">Paper link: AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE</summary></entry><entry><title type="html">PS: Towards Causal Representation Learning</title><link href="/study/causality/representation-learning/2021/03/28/torward-causal-representation.html" rel="alternate" type="text/html" title="PS: Towards Causal Representation Learning" /><published>2021-03-28T00:00:00+00:00</published><updated>2021-03-28T00:00:00+00:00</updated><id>/study/causality/representation-learning/2021/03/28/torward-causal-representation</id><content type="html" xml:base="/study/causality/representation-learning/2021/03/28/torward-causal-representation.html">&lt;p&gt;Paper link: &lt;a href=&quot;https://arxiv.org/pdf/2102.11107.pdf&quot;&gt;Towards Causal Representation Learning&lt;/a&gt;
+&lt;!-- What topic of paper / hypothesis / objectives --&gt;&lt;/p&gt;
+&lt;h3 id=&quot;what&quot;&gt;What&lt;/h3&gt;
+&lt;p&gt;Why is this topic important (related)
+&lt;!-- ### Why --&gt;&lt;/p&gt;
+
+&lt;!-- Metodology --&gt;
+&lt;!-- ### How --&gt;
+
+&lt;!-- results --&gt;
+&lt;!-- ### Results --&gt;
+
+&lt;!-- thoughts? conclusion --&gt;
+&lt;!-- ### Conclusion --&gt;
+
+&lt;p&gt;The current Machine learning techniques can’t transfer to new problems and any form of generalization that is not from one data point to the next (sampled from the same distribution), but rather from one problem to the next — both have been termed generalization. The current successes of machine learning boild down to large scale pattern recognition on suitably independent  and identically distributed (i.i.d) data. Data augmentation pre-training, self-supervision try to solve the problem to  generalize outside the i.i.d. However may not be suficient, to learn outside i.i.d requires learning not mere statistical associations  between variables, but an underlying causal model.&lt;/p&gt;
+
+&lt;p&gt;Causality cannot be described using Boolean language or probabilistic inference; it requires the notion of intervention. Causation can be described as conditional probabilities: seeing people open umbrellas suggests that it is rainnig, however if people are closing the umbrellas does not stop  the rain. Discovering causal relations means acquiring robust knowledge that holds beyond the support of and observed data distributions and a set of training tasks, and it extends to situations involving forms of reasoning.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Big:&lt;/strong&gt; What are differences between statistical and causal systems? Independent Causal Mechanisms are enough? What are the existing approaches to learn causal relations? Implications of causality for machine learning?&lt;/p&gt;
+
+&lt;h4 id=&quot;statistical-vs-causal&quot;&gt;Statistical vs Causal&lt;/h4&gt;
+&lt;p&gt;If we have a physical system whose physical mechanisms are correctly  described using differential equation, then its causal structure can be directly read off. A differential equation  is a rather comprehensive description of a system, a statistical model can be viewed a  superficial one. It does not refer to the dynamics of the processes but to some statistical dependencies between some component of the  differential  equation. Causal modeling tries to predict the effect of  interventions. Causal discovery and learning try to arrive at such  models in a data-driven way.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;statistical models are only accurate within identical experimental conditions. Performing and intervention changes the data distribution, which may lead to inaccurate predictions.&lt;/li&gt;
+  &lt;li&gt;while statistical models are weaker than causl models, they can be efficiently learned from observational data only. On the other hand learning causal relations requently requires collecting data from multiple environments  or the ability to perform interventions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;The Reichenbach Principle: if two observables X and Y are statistically depent, then there exists  a variable Z that causally inluences both and explain all the dependecy in the sense of making them independent when conditioned on Z&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A statistical model may be defined for instance through a graphical model i.e. a  probability  distribution along with a graph such that the former is  markovian. However the edges in a generic graphical  model do not need  to be causal.&lt;/p&gt;
+
+&lt;p&gt;A graphical model becomes causal if the edges o its graph are causal (becomes a causal graph).&lt;/p&gt;
+
+&lt;p&gt;A structural causal model is composed of a set of causal variables and  a set of strucutral equations with a distribution over the noise variables (or a set of causal conditionals).&lt;/p&gt;
+
+&lt;p&gt;Once a causal model is available either by extenal human knowledge or a learning process, causal reasoning allows to draw conclusions on the effect of interventions, conterfactuals and  potetntion outcomes. In contrast statistical models only allow reason about the outcome of i.i.d experiments.&lt;/p&gt;
+
+&lt;h4 id=&quot;independent-causal-mechanisms&quot;&gt;Independent Causal Mechanisms&lt;/h4&gt;
+
+&lt;p&gt;For a model to correctly predict the efffect of  interventions it needs to be robust to generalizing from an observational distribution to certain interventional distributions.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Indepent Causal Mechanisms (ICM) Principle: the causal generative process of a system’s vaiables is composed of autonomous modules that do not inform or  influence each other. In a probabilistic case, this means  that the condition distribuiton of each bariable given its causes does not inform  or influence the other mechanisms&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This entails several notions imporrrtant to causality including separate intervenability of causal variables, modularity and autonomy of subsystems, and invariance.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sparse Mechanisms Shit (SMS): small distribution changes tend to manifest themselves in a sparse or local way in the causal/disentagled factorization, i.e. they should usually not affect all factors simultaneously.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;learning-causal-relations&quot;&gt;Learning Causal relations&lt;/h3&gt;
+
+&lt;p&gt;Traditional causal discovery and reasoning assume that the units are random variables connected by a causal graph. However real world observations are usually not structured e.g. objects in images.   Causal representation  learning tries to learn these variables from data. 
+Problems in causal representation learning:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;learning disentangled representations:&lt;/li&gt;
+  &lt;li&gt;learning transferable mechanisms: finding ways to  pooling / re-use data instead of using large-scale labeling work done by humans. Realizing  Konrad Lorenz’ notion of thinking as acting in an imagined space.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;implications-for-machine-learning&quot;&gt;Implications for machine learning&lt;/h4&gt;
+&lt;p&gt;Different assumption of i.i.d assumption. The data that the model will be applied comes ffrom a possivly different distribution. Some challenges: need to infer causal variables from the available low-level input features; no consensus on which aspects of the data reveal causal relations; the usual experimental protocol of training and test may not be  sufficient for evaluating causal relations on existing data sets; even in the limited cases we understand, we often lack scalable and numerically sound  algorithms.&lt;/p&gt;
+
+&lt;p&gt;Reinforcement learning is closer to causality than the machine learning  mainstream in that it sometimes effectively directly estimates do-probabilities.&lt;/p&gt;
+
+&lt;h4 id=&quot;future-research&quot;&gt;Future Research&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;learning non-linear causal relations at scale: meta and multi-task  learning  close to the assumptions and desiderata of causal modeling;&lt;/li&gt;
+  &lt;li&gt;learning causall variables: disentangled representations learned by state of the art neural networks are still distributed in a sense that they are represented in a vector format with an arbitrary ordering in the dimensions: for example we cannot change the number of objects in a image.&lt;/li&gt;
+  &lt;li&gt;understanding the biases of existing deep learning approaches: scaling to  massive data sets, relying on data augmentation and self supervision have all been successfully explored to improve the  robustness of the prediction of deep learning models.&lt;/li&gt;
+  &lt;li&gt;learning causally corect models of the world and the agent: in many real world reinforcement learning settings abstract state representations are not available. hence the ability to derive  abstract causal variables from high-dimensional low-level representation and then recover causal graphs is important for causal induction in real-world reinforcement learning settings.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>pudim</name><email>tospe.ami@gmail.com</email></author><category term="study" /><category term="causality" /><category term="representation-learning" /><summary type="html">Paper link: Towards Causal Representation Learning What Why is this topic important (related)</summary></entry><entry><title type="html">To Learn</title><link href="/study/2021/02/28/to-learn.html" rel="alternate" type="text/html" title="To Learn" /><published>2021-02-28T00:00:00+00:00</published><updated>2021-02-28T00:00:00+00:00</updated><id>/study/2021/02/28/to-learn</id><content type="html" xml:base="/study/2021/02/28/to-learn.html">&lt;h2 id=&quot;to-learn&quot;&gt;To learn&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;train self supervvised&lt;/li&gt;
+  &lt;li&gt;distilation: big model teacher is fully trained on a dataset, then the teacher teaches, together with the dataset, to the student&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>pudim</name><email>tospe.ami@gmail.com</email></author><category term="study" /><summary type="html">To learn train self supervvised distilation: big model teacher is fully trained on a dataset, then the teacher teaches, together with the dataset, to the student</summary></entry><entry><title type="html">oi books</title><link href="/books/2021/01/01/oi-books.html" rel="alternate" type="text/html" title="oi books" /><published>2021-01-01T00:00:00+00:00</published><updated>2021-01-01T00:00:00+00:00</updated><id>/books/2021/01/01/oi-books</id><content type="html" xml:base="/books/2021/01/01/oi-books.html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+
+&lt;div class=&quot;mermaid&quot;&gt;
+graph TD;
+    A--&amp;gt;B;
+    A--&amp;gt;C;
+    B--&amp;gt;D;
+    C--&amp;gt;D;
+&lt;/div&gt;
+&lt;div class=&quot;mermaid&quot;&gt;
+gantt
+       dateFormat  YYYY-MM-DD
+       title Adding GANTT diagram functionality to mermaid
+
+       section A section
+       Completed task            :done,    des1, 2014-01-06,2014-01-08
+       Active task               :active,  des2, 2014-01-09, 3d
+       Future task               :         des3, after des2, 5d
+       Future task2              :         des4, after des3, 5d
+
+       section Critical tasks
+       Completed task in the critical line :crit, done, 2014-01-06,24h
+       Implement parser and jison          :crit, done, after des1, 2d
+       Create tests for parser             :crit, active, 3d
+       Future task in critical line        :crit, 5d
+       Create tests for renderer           :2d
+       Add to mermaid                      :1d
+
+       section Documentation
+       Describe gantt syntax               :active, a1, after des1, 3d
+       Add gantt diagram to demo page      :after a1  , 20h
+       Add another diagram to demo page    :doc1, after a1  , 48h
+
+       section Last section
+       Describe gantt syntax               :after doc1, 3d
+       Add gantt diagram to demo page      :20h
+       Add another diagram to demo page    :48h
+&lt;/div&gt;</content><author><name>pudim</name><email>tospe.ami@gmail.com</email></author><category term="books" /><summary type="html">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</summary></entry></feed>
