@@ -5,7 +5,10 @@ permalink: /about/
 ---
 Hi 🤟🏽 I'm Tomas, and Electrical Engineer Graduated, Full stack / Machine Learning Engineer, and sports enthusiast. I am [tospe](https://github.com/tospe) at github, [tomassp](https://github.com/tomassp) at gitlab and [tospe.ami@gmail.com](mailto:tospe.ami@gmail.com). [My Resume.](/CV.pdf)
 
-For the last couple of months I have been working as a freelancer. I have developed websites ([1](http://advogadosporto.com/)) and machine learning products (sports team video classification)
+
+Currently i am working as a Machine Learning at Fraunhofer where I do machine learning research applied to industry. 
+
+From mid 2020 to mid 2021 I have been working as a freelancer. I have developed websites ([1](http://advogadosporto.com/)) and machine learning products (sports team video classification). 
 
 After returning from Hong Kong, I started working in my master thesis with the title of u-cf2vec: Representation Learning for Personalized Algorithm Selection in Recommender Systems. Developed the framework in python using Meta learning, Representation Learning and Collaborative Filtering. The code was runned in google colab and google compute engine. This [work](https://ieeexplore.ieee.org/document/9346551) was published in ICDM 2020. I Graduated in late 2020.
 
