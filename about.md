@@ -3,10 +3,10 @@ layout: page
 title: About
 permalink: /about/
 ---
-Hi 🤟🏽 I'm Tomas, and Electrical Engineer Graduated, Full stack / Machine Learning Engineer, and sports enthusiast. I am [tospe](https://github.com/tospe) at github, [tomassp](https://github.com/tomassp) at gitlab and [tospe.ami@gmail.com](mailto:tospe.ami@gmail.com). [My Resume.](/CV.pdf)
+Hi 🤟🏽 I'm Tomas, and Electrical Engineer Graduated, Full stack, Machine Learning Engineer, and sports enthusiast. I am [tospe](https://github.com/tospe) at github, [tomassp](https://gitlab.com/tomassp) at gitlab and [tospe.ami@gmail.com](mailto:tospe.ami@gmail.com). [My Resume.](/cv_tsp.pdf)
 
 
-Currently i am working as a Machine Learning at Fraunhofer where I do machine learning research applied to industry. 
+Currently i am working as a Machine Learning at Fraunhofer where I do machine learning research applied to industry. I developed Machine Learning / Deep Learning solutions in predictive maintenance, anomaly detection, nlp. I also lead the internal Mlops group that tries to improve the ML solutions end-to-end from good code structure to experiment tracking and data versioning. Since I believe education is very important I also gave some machine learning courses to different companies in Portugal.  
 
 From mid 2020 to mid 2021 I have been working as a freelancer. I have developed websites ([1](http://advogadosporto.com/)) and machine learning products (sports team video classification). 
 
